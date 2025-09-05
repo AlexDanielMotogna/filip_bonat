@@ -1,12 +1,9 @@
 'use client'
 import Mail1 from '@/assets/img/icons/mail1.svg'
 import Sublogo from '@/assets/img/icons/sublogo1.svg'
-import Logo1 from '@/assets/img/logo/logo1.png'
 import Aos from 'aos'
 import { useEffect } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import { currentYear } from '../helper/constants'
-import { Link } from 'react-router-dom'
 
 const Contact = () => {
   useEffect(() => {
