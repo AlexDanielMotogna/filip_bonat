@@ -17,7 +17,7 @@
     "bootstrap": "^5.3.3",
     "glightbox": "^3.3.1",
     "jarallax": "^2.2.1",
-    "plugin": "^0.3.3",
+    "plugin": "^0.0.15",
     "react": "^19.0.0",
     "react-awesome-reveal": "^4.3.1",
     "react-bootstrap": "^2.10.9",

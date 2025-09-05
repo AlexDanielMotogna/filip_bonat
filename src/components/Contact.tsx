@@ -20,7 +20,7 @@ const Contact = () => {
   }, [])
   return (
     <>
-      <div id="list-item-8">
+      <div id="Kontakt">
         <div className="contact-section-area">
           <Container>
             <Row>
@@ -28,71 +28,57 @@ const Contact = () => {
                 <div className="contact-heading heading1">
                   <h5 data-aos="fade-left" data-aos-duration={900}>
                     <img src={Sublogo} alt="" />
-                    Contact Me
+                    Kontakt
                   </h5>
                   <div className="space24" />
                   <h2 data-aos="fade-left" data-aos-duration={1000}>
-                    Have Any Project in
+                    Haben Sie Fragen oder ein Projekt?
                   </h2>
                   <div className="space24" />
-                  <h2 className="head" data-aos="fade-left" data-aos-duration={1100}>
-                    Mind, <span>Lets Talk</span>
-                  </h2>
                 </div>
                 <div className="space50" />
                 <div className="contact-boxarea" data-aos="zoom-in" data-aos-duration={1000}>
-                  <h3>Let’s Work Together!</h3>
+                  <h3>Lassen Sie uns zusammenarbeiten!</h3>
                   <div className="space12" />
                   <Row>
                     <Col lg={6} md={6}>
                       <div className="input-area">
-                        <input type="text" placeholder="Full Name" />
+                        <input type="text" placeholder="Vollständiger Name" />
                       </div>
                     </Col>
                     <Col lg={6} md={6}>
                       <div className="input-area">
-                        <input type="email" placeholder="Email Address" />
+                        <input type="email" placeholder="E-Mail-Adresse" />
                       </div>
                     </Col>
                     <Col lg={6} md={6}>
                       <div className="input-area">
-                        <input type="number" placeholder="Phone Number" />
+                        <input type="number" placeholder="Telefonnummer" />
                       </div>
                     </Col>
                     <Col lg={6} md={6}>
                       <div className="input-area">
-                        <input type="text" placeholder="Subject" />
+                        <input type="text" placeholder="Betreff" />
                       </div>
                     </Col>
                     <Col lg={12}>
                       <div className="input-area">
-                        <input type="text" placeholder="Your Budget (optional)" />
+                        <input type="text" placeholder="Ihr Budget (optional)" />
                       </div>
                     </Col>
                     <Col lg={12}>
                       <div className="input-area">
-                        <textarea placeholder="Message" />
+                        <textarea placeholder="Nachricht" />
                       </div>
                     </Col>
                     <Col lg={12}>
                       <div className="input-area">
                         <button type="submit" className="vl-btn1">
-                          Send <img src={Mail1} alt="" />
+                          Senden <img src={Mail1} alt="" />
                         </button>
                       </div>
                     </Col>
                   </Row>
-                </div>
-              </Col>
-              <Col lg={12}>
-                <div className="space50" />
-                <div className="footer-area">
-                  <div className="btn-area1">
-                    <Link to="/">
-                      <img src={Logo1} alt="" />
-                    </Link>
-                  </div>
-                  <p>© {currentYear} OVRO. All Rights Reserved.</p>
                 </div>
               </Col>
             </Row>

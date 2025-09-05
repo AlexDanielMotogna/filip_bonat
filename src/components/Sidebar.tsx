@@ -28,9 +28,9 @@ const SidebarPage = () => {
         <img className="w-100" src={Hero} alt="image" />
       </div>
       <div className="space18" />
-      <h3>Alex Carry</h3>
+      <h3>Filip Bonat</h3>
       <div className="space16" />
-      <p>Hi, I’m Alex, a dedicated UI/UX Designer with 10 years of experience creating meaningful digital experiences.</p>
+      <p>Hi, ich bin Filip Bonat, Versicherungsexperte mit über 4 Jahren Erfahrung in der Entwicklung maßgeschneiderter Versicherungslösungen.</p>
       <div className="space32" />
       <ul>
         <li>
@@ -61,12 +61,12 @@ const SidebarPage = () => {
       </ul>
       <div className="space44" />
       <div className="btn-area1 text-center">
-        <Link to="" target="_blank" download className="vl-btn1">
-          Download Now <img src={Download} alt="" />
-        </Link>
+        <a href="tel:+436767857277" className="vl-btn1">
+          Jetzt mit mir sprechen
+        </a>
       </div>
       <div className="space30" />
-      <p>© {currentYear} OVRO. All Rights Reserved.</p>
+      <p>© {currentYear} Filip Bonat. All Rights Reserved.</p>
     </>
   )
 }

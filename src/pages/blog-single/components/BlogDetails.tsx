@@ -24,7 +24,7 @@ const BlogDetails = () => {
   }, [])
   return (
     <>
-      <div id="list-item-1">
+      <div id="Startseite">
         <div className="blog-single-area">
           <Container>
             <Row>

@@ -16,7 +16,7 @@ const Service = () => {
   }, [])
   return (
     <>
-      <div id="list-item-3">
+      <div id="Leistungen">
         <div className="service-section-area">
           <Container>
             <Row>
@@ -24,46 +24,47 @@ const Service = () => {
                 <div className="service-header heading1">
                   <h5 data-aos="fade-left" data-aos-duration={800}>
                     <img src={Sublog1} alt="" />
-                    My Services
+                    Leistungen
                   </h5>
                   <div className="space24" />
                   <h2 data-aos="fade-left" data-aos-duration={1000}>
-                    Elevating Brands
+                    Versicherungslösungen
                   </h2>
                   <div className="space24" />
                   <h2 className="head" data-aos="fade-left" data-aos-duration={1100}>
-                    Intuitive <span>Design</span>
+                    für jede <span>Lebenslage</span>
                   </h2>
                   <div className="space50" />
                   <div className="div" data-aos="fade-left" data-aos-duration={900}>
                     <div className="service-main-boxes">
-                      <h4>UI/UX Design</h4>
+                      <h4>Beratung & Analyse</h4>
                       <div className="space24" />
-                      <p>Designing intuitive, user-focused interfaces that prioritize functionality and seamless navigation.</p>
+                      <p>Wir analysieren Ihre individuelle Situation und finden die optimale Versicherung.</p>
                     </div>
                   </div>
                   <div className="space30" />
                   <div className="div" data-aos="fade-left" data-aos-duration={1000}>
                     <div className="service-main-boxes">
-                      <h4>User Research &amp; Prototyping</h4>
+                      <h4>Private Versicherungen</h4>
                       <div className="space24" />
-                      <p>Conducting in-depth user research and creating interactive prototypes to validate ideas and refine designs.</p>
+                      <p>Lebens-, Unfall-, Hausrat-, Haftpflicht- und Krankenversicherung.</p>
                     </div>
                   </div>
                   <div className="space30" />
                   <div className="div" data-aos="fade-left" data-aos-duration={1100}>
                     <div className="service-main-boxes">
-                      <h4>Responsive Web Design</h4>
+                      <h4>Gewerbliche Versicherungen</h4>
                       <div className="space24" />
-                      <p>Crafting designs that adapt seamlessly across all devices, ensuring a consistent user experience.</p>
+                      <p>Schutz für Unternehmen, Mitarbeiter, Fuhrpark und Betriebshaftpflicht.
+                      </p>
                     </div>
                   </div>
                   <div className="space30" />
                   <div className="div" data-aos="fade-left" data-aos-duration={1200}>
                     <div className="service-main-boxes">
-                      <h4>Wireframing &amp; Visual Design</h4>
+                      <h4>Digitale Vertragsverwaltung</h4>
                       <div className="space24" />
-                      <p>Creating detailed wireframes and visually stunning designs to bring ideas into focus.</p>
+                      <p>Alle Policen übersichtlich, digital & jederzeit zugänglich.</p>
                     </div>
                   </div>
                 </div>

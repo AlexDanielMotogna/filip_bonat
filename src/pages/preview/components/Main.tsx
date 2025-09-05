@@ -35,13 +35,13 @@ const Main = () => {
         <Col lg={12} className="m-auto">
           <div className="images-area" data-aos="fade-up" data-aos-duration={1000}>
             <div className="img1">
-              <Link to="/demo-1" >
+              <Link to="/HomePage" >
                 <img src={Preview1} alt="" />
               </Link>
             </div>
             <div className="space32" />
             <div className="text text-center">
-              <Link to="/demo-1">
+              <Link to="/HomePage">
                 Main Demo
               </Link>
             </div>
@@ -167,7 +167,7 @@ const Main = () => {
                   </Link>
                 </div>
                 <div className="btn-area1">
-                  <Link to="/demo-7"  className="vl-btn1 m-0">
+                  <Link to="/demo-7" className="vl-btn1 m-0">
                     VIEW DEMO
                   </Link>
                 </div>

@@ -26,7 +26,7 @@ const About = () => {
   }, [])
   return (
     <>
-      <div id="list-item-2">
+      <div id="Übermich">
         <div className="about-section-area">
           <div className="heading1">
             <h5 data-aos="fade-left" data-aos-duration={800}>
@@ -35,11 +35,11 @@ const About = () => {
             </h5>
             <div className="space24" />
             <h1 data-aos="fade-left" data-aos-duration={1000}>
-              Crafting Seamless
+              Kompetente Beratung
             </h1>
             <div className="space24" />
             <h1 className="head" data-aos="fade-left" data-aos-duration={1100}>
-              User <span>Experiences</span>
+              für <span>Ihre Sicherheit</span>
             </h1>
           </div>
           <div className="space60" />
@@ -47,12 +47,11 @@ const About = () => {
             <Row>
               <Col lg={12} data-aos="fade-left" data-aos-duration={1200}>
                 <div className="about-main-boxes">
-                  <h4>Alex Carry</h4>
+                  <h4>Filip Bonat</h4>
                   <div className="space24" />
                   <p>
-                    Hi, I’m Alex Carry, a dedicated UI/UX Designer with 10 years of experience creating meaningful digital experiences. I specialize
-                    in crafting user-centered designs that enhance engagement and drive results. By combining research, creativity, and technical
-                    skills, I deliver solutions that not only look great but also function seamlessly.
+                    Ich bin Filip Bonat, Versicherungsexperte mit über 4 Jahren Erfahrung in der Entwicklung maßgeschneiderter Versicherungslösungen für Privatpersonen und Unternehmen.
+                    Mein Ziel ist es, Vertrauen aufzubauen, Risiken transparent zu managen und Sie langfristig abzusichern – unabhängig davon, ob es um Lebens-, Gesundheits-, Sach- oder Unternehmensversicherungen geht.
                   </p>
                 </div>
               </Col>
@@ -60,9 +59,9 @@ const About = () => {
                 <div className="about-boxes2">
                   <img src={Home2} alt="" />
                   <div className="content-area">
-                    <h4>UI/UX Design</h4>
+                    <h4>Vertrauensvolle Beratung</h4>
                     <div className="space16" />
-                    <p>Designing intuitive, user-focused interfaces that prioritize functionality &amp; seamless navigation.</p>
+                    <p>Persönliche Gespräche auf Augenhöhe – ich nehme mir Zeit, um Ihre individuelle Lebenssituation zu verstehen und passende Lösungen zu entwickeln.</p>
                   </div>
                 </div>
               </Col>
@@ -70,9 +69,9 @@ const About = () => {
                 <div className="about-boxes2">
                   <img src={Home3} alt="" />
                   <div className="content-area">
-                    <h4>User Research &amp; Prototyping</h4>
+                    <h4>Transparente Kommunikation</h4>
                     <div className="space16" />
-                    <p>Conducting in-depth user research and creating interactive prototypes to validate ideas and refine designs.</p>
+                    <p>Ich erkläre Versicherungsoptionen klar und verständlich – ohne Fachchinesisch. Sie wissen jederzeit, wofür Sie sich entscheiden.</p>
                   </div>
                 </div>
               </Col>
@@ -80,9 +79,9 @@ const About = () => {
                 <div className="about-boxes2">
                   <img src={Home4} alt="" />
                   <div className="content-area">
-                    <h4>Responsive Web Design</h4>
+                    <h4>Ganzheitlicher Ansatz</h4>
                     <div className="space16" />
-                    <p>Crafting designs adapt seamlessly across all devices ensuring and a consistent user experience.</p>
+                    <p>Ich betrachte nicht nur einzelne Verträge, sondern Ihr gesamtes Risikoprofil – für eine umfassende und nachhaltige Absicherung.</p>
                   </div>
                 </div>
               </Col>
@@ -90,32 +89,29 @@ const About = () => {
                 <div className="about-boxes2">
                   <img src={Home5} alt="" />
                   <div className="content-area">
-                    <h4>Wireframing &amp; Visual Design</h4>
+                    <h4>Digitale Kompetenz</h4>
                     <div className="space16" />
-                    <p>Creating detailed wireframes and visually stunning designs to bring ideas into focus.</p>
+                    <p>Moderne Tools ermöglichen es mir, Beratung flexibel, ortsunabhängig und effizient zu gestalten – auch komplett digital.</p>
                   </div>
                 </div>
               </Col>
               <div className="soace20" />
               <Col lg={6} md={6}>
-                <h3>Work Experience</h3>
+                <h3>Berufserfahrung</h3>
                 <div className="space32" />
                 <div className="about-others-box" data-aos="zoom-in" data-aos-duration={900}>
-                  <Link to="">2015-2020</Link>
+                  <Link to="">seit 2020</Link>
                   <div className="space16" />
                   <h4>
-                    <Link to="">UI/UX Designer</Link>
+                    <Link to="">Versicherungsexperte </Link>
                   </h4>
                   <div className="space16" />
-                  <p>Creative Spark Agency</p>
+                  <p>Finova</p>
                   <div className="space32" />
-                  <Link to="">2020 - Present</Link>
-                  <div className="space16" />
-                  <h4>
-                    <Link to="">Senior UI/UX Designer </Link>
-                  </h4>
-                  <div className="space16" />
-                  <p>Visionary Tech</p>
+                  <Link to=""> Beratung in allen Versicherungsfragen <br />
+                    Risikoanalyse und maßgeschneiderte Policen <br />
+                    Betreuung von Privat- und Firmenkunden
+                  </Link>
                 </div>
                 <div className="about-others-box text-center" data-aos="zoom-in" data-aos-duration={1000}>
                   <h4>Stay With Me </h4>
@@ -150,24 +146,24 @@ const About = () => {
                 </div>
               </Col>
               <Col lg={6} md={6}>
-                <h3>Education</h3>
+                <h3>Ausbildung</h3>
                 <div className="space32" />
                 <div className="about-others-box" data-aos="zoom-in" data-aos-duration={1100}>
                   <Link to="">2010 - 2013</Link>
                   <div className="space16" />
                   <h4>
-                    <Link to="">Bachelor's Degree in Graphic Design</Link>
+                    <Link to="">Zertifizierter Versicherungsberater (WKO)</Link>
                   </h4>
                   <div className="space16" />
-                  <p>University of California</p>
+                  <p>Graz</p>
                   <div className="space32" />
                   <Link to="">2013 - 2015</Link>
                   <div className="space16" />
                   <h4>
-                    <Link to="">Master's Degree in User Experience Design</Link>
+                    <Link to="">Österreichische Finanzakademie</Link>
                   </h4>
                   <div className="space16" />
-                  <p>Massachusetts Institute of Technology (MIT)</p>
+                  <p>Graz</p>
                 </div>
               </Col>
               <div className="space20" />

@@ -1,25 +1,21 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import About from '../../components/About'
-import Blog from '../../components/Blog'
 import Contact from '../../components/Contact'
+import GoogleMapLocation from '../../components/GoogleMapLocation'
 import IconVertical from '../../components/IconVertical'
 import Main from '../../components/Main'
-import Portfolio from '../../components/Portfolio'
 import Service from '../../components/Service'
 import SidebarPage from '../../components/Sidebar'
 import Skills from '../../components/Skills'
 import Testimonial from '../../components/Testimonials'
 import TopNav from '../../components/TopNav'
 
-const Demo4Page = () => {
+const DemoPage = () => {
   return (
     <>
       <div className="body1">
         <TopNav />
-        <div className="main-hero-area4 parallaxie">
-          <video className="body-overlay" muted autoPlay loop>
-            <source src="/video3.mp4" type="video/mp4" />
-          </video>
+        <div className="main-hero-area parallaxie">
           <Container>
             <Row>
               <Col lg={4}>
@@ -37,13 +33,11 @@ const Demo4Page = () => {
                   <div className="space50" />
                   <Skills />
                   <div className="space30" />
-                  <Portfolio />
-                  <div className="space30" />
                   <Testimonial />
                   <div className="space30" />
-                  <Blog />
-                  <div className="space60" />
                   <Contact />
+                  <div className="space30" />
+                  <GoogleMapLocation />
                 </div>
               </Col>
             </Row>
@@ -54,4 +48,4 @@ const Demo4Page = () => {
   )
 }
 
-export default Demo4Page
+export default DemoPage

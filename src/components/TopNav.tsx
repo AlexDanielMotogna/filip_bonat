@@ -14,6 +14,7 @@ const TopNav = () => {
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
+
   return (
     <>
       <header>
@@ -30,7 +31,7 @@ const TopNav = () => {
                   <div className="btn-area d-lg-flex">
                     <ThemeToggle />
                     <Link to="/" className="vl-btn1">
-                      HIRE ME&nbsp;
+                      KONTAKTIEREN SIE MICH&nbsp;
                       <span>
                         <img src={Mail1} alt="" />
                       </span>
@@ -57,28 +58,22 @@ const TopNav = () => {
             <div className="sidebar-content">
               <ul>
                 <li>
-                  <a href="#list-item-1">Home</a>
+                  <a href="#Startseite">Startseite</a>
                 </li>
                 <li>
-                  <a href="#list-item-2">About Us</a>
+                  <a href="#Übermich">Übermich</a>
                 </li>
                 <li>
-                  <a href="#list-item-3">service</a>
+                  <a href="#Leistungen">Leistungen</a>
                 </li>
                 <li>
-                  <a href="#list-item-4">Skill</a>
+                  <a href="#Kompetenzen">Kompetenzen</a>
                 </li>
                 <li>
-                  <a href="#list-item-5">Portfolio</a>
+                  <a href="#Bewertungen">Bewertungen</a>
                 </li>
                 <li>
-                  <a href="#list-item-6">Testimonial</a>
-                </li>
-                <li>
-                  <a href="#list-item-7">Blogs</a>
-                </li>
-                <li>
-                  <a href="#list-item-8">Contact</a>
+                  <a href="#Kontakt">Kontakt</a>
                 </li>
               </ul>
             </div>
@@ -86,12 +81,12 @@ const TopNav = () => {
             <div className="space16" />
             <div className="btn-area">
               <Link to="" className="vl-btn1">
-                Get in touch now <img src={Mail1} alt="" />
+                Kontakt aufnehmen <img src={Mail1} alt="" />
               </Link>
             </div>
             <div className="space40" />
             <div className="social-link-area">
-              <h3 className="sidebar-heading">Social Links</h3>
+              <h3 className="sidebar-heading">Soziale Netzwerke</h3>
               <ul>
                 <li>
                   <Link to="">
@@ -114,11 +109,11 @@ const TopNav = () => {
             </div>
             <div className="space40" />
             <div className="form-area" style={{ width: '90%' }}>
-              <h3>Subscribe To Newsletter</h3>
+              <h3>Newsletter abonnieren</h3>
               <Form>
-                <input type="text" placeholder="Email Address*" />
+                <input type="text" placeholder="E-Mail-Adresse*" />
                 <button type="submit" className="vl-btn1" style={{ fontSize: '15px' }}>
-                  subscribe
+                  abonnieren
                 </button>
               </Form>
             </div>
