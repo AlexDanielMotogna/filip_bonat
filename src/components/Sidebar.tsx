@@ -1,6 +1,5 @@
 'use client'
 import Hero from '@/assets/img/all-images/hero/hero-img1.png'
-import Download from '@/assets/img/icons/download1.svg'
 import Sicon1 from '@/assets/img/icons/s-icon1.svg'
 import Sicon2 from '@/assets/img/icons/s-icon2.svg'
 import Sicon3 from '@/assets/img/icons/s-icon3.svg'
