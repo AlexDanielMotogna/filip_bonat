@@ -1,4 +1,5 @@
 'use client'
+import { useState, useEffect } from 'react'
 import Hero from '@/assets/img/all-images/hero/hero-img1.png'
 import Sicon1 from '@/assets/img/icons/s-icon1.svg'
 import Sicon2 from '@/assets/img/icons/s-icon2.svg'
@@ -6,30 +7,38 @@ import Sicon3 from '@/assets/img/icons/s-icon3.svg'
 import Sicon4 from '@/assets/img/icons/s-icon4.svg'
 import Sicon5 from '@/assets/img/icons/s-icon5.svg'
 import Aos from 'aos'
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { currentYear } from '../helper/constants'
+import ContactModal from './ContactModal'
 
 const SidebarPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   useEffect(() => {
-    Aos.init({
-      duration: 1000,
-      once: true,
-    })
+    Aos.init({ duration: 1000, once: true })
     return () => {
       Aos.refresh()
     }
   }, [])
+
   return (
     <>
-      <div className="reveal-item  rounded img1 image-anime" data-aos="reveal-item">
-        <div className="reveal-animation reveal-end reveal-primary aos" data-aos="reveal-end" />
+      <div className="reveal-item rounded img1 image-anime" data-aos="reveal-item">
+        <div
+          className="reveal-animation reveal-end reveal-primary aos"
+          data-aos="reveal-end"
+        />
         <img className="w-100" src={Hero} alt="image" />
       </div>
+
       <div className="space18" />
       <h3>Filip Bonat</h3>
       <div className="space16" />
-      <p>Hi, ich bin Filip Bonat, Versicherungsexperte mit über 4 Jahren Erfahrung in der Entwicklung maßgeschneiderter Versicherungslösungen.</p>
+      <p>
+        Hi, ich bin Filip Bonat, Versicherungsexperte mit über 4 Jahren Erfahrung
+        in der Entwicklung maßgeschneiderter Versicherungslösungen.
+      </p>
+
       <div className="space32" />
       <ul>
         <li>
@@ -58,14 +67,22 @@ const SidebarPage = () => {
           </Link>
         </li>
       </ul>
+
       <div className="space44" />
       <div className="btn-area1 text-center">
-        <a href="tel:+436767857277" className="vl-btn1">
+        <button
+          className="vl-btn1"
+          onClick={() => setIsModalOpen(true)}
+        >
           Jetzt mit mir sprechen
-        </a>
+        </button>
       </div>
+
       <div className="space30" />
       <p>© {currentYear} Filip Bonat. All Rights Reserved.</p>
+
+      {/* Aquí se monta tu modal */}
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   )
 }

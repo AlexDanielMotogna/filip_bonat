@@ -149,6 +149,43 @@
         transition: all .4s;
     }
 }
+
+// Small buttons for Main component
+.main-btn-area.small-buttons {
+    display: flex;
+    gap: 10px;
+    
+    .btn-sm {
+        display: inline-block;
+        padding: 8px 16px;
+        font-size: 14px;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        
+        &.btn-privat {
+            background-color: var(--ztc-bg-btn-bg1);
+            color: var(--ztc-text-btn-text1);
+            
+            &:hover {
+                background-color: transparent;
+                border: 1px solid var(--ztc-bg-btn-bg1);
+                color: var(--ztc-bg-btn-bg1);
+            }
+        }
+        
+        &.btn-firma {
+            background-color: transparent;
+            color: #2ecc71; // Vibrant green color
+            border: 1px solid #2ecc71;
+            
+            &:hover {
+                background-color: #2ecc71;
+                color: var(--ztc-text-btn-text1);
+            }
+        }
+    }
+}
 /*============= COMMON CSS AREA ENDS===============*/
 
 .image-anime {
@@ -224,4 +261,4 @@
             }
         }
     }
-  } 
+  }

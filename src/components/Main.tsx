@@ -41,12 +41,12 @@ const Main = () => {
             </div>
           </div>
           <div className="space32" />
-          <div className="main-btn-area" data-aos="fade-up" data-aos-duration={1200}>
-            <a href="tel:+43 676 7857277">
-              Jetzt Kontakt aufnehmen
-              <span>
-                <FaArrowRight className="fa-solid" />
-              </span>
+          <div className="main-btn-area small-buttons" data-aos="fade-up" data-aos-duration={1200}>
+            <a href="/privat" className="btn btn-privat btn-sm">
+              Privat
+            </a>
+            <a href="/firma" className="btn btn-firma btn-sm">
+              Firma
             </a>
           </div>
         </div>
