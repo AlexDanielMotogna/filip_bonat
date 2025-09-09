@@ -2,7 +2,6 @@
 import Other1 from '@/assets/img/all-images/others/others1.png'
 import Aos from 'aos'
 import { useEffect } from 'react'
-import { FaArrowRight } from 'react-icons/fa6'
 
 const Main = () => {
   useEffect(() => {
