@@ -1,6 +1,6 @@
 'use client'
 import { type ReactNode, createContext, useContext, useEffect, useMemo, useState } from 'react'
-import { LayoutState, LayoutTheme, LayoutType } from '../types/layouts'
+import { LayoutState, LayoutType } from '../types/layouts'
 const LayoutContext = createContext<LayoutType | undefined>(undefined)
 
 function useLayoutContext() {
@@ -14,25 +14,24 @@ function LayoutProvider({ children }: Readonly<{ children: ReactNode }>) {
   const INIT_STATE: LayoutState = {
     theme: 'light',
   }
-  const [settings, setSettings] = useState<LayoutState>(INIT_STATE)
-  const themeMode = settings.theme
-  // update settings
-  const updateSettings = (_newSettings: Partial<LayoutState>) => {
-    setSettings({ ...settings, ..._newSettings })
-  }
+  const [settings] = useState<LayoutState>(INIT_STATE)
+  const themeMode = 'light'
 
   useEffect(() => {
     const html = document.getElementsByTagName('html')[0]
-    if (themeMode == 'dark') html.classList.add('dark')
-    else html.classList.remove('dark')
-  }, [themeMode])
+    html.classList.add('light-mode')
+    html.classList.remove('dark-mode')
+    document.body.classList.add('light-mode')
+    document.body.classList.remove('dark-mode')
+    localStorage.setItem('theme', 'light')
+  }, [])
 
-  const updateTheme = (newTheme: LayoutTheme) => {
-    updateSettings({ ...settings, theme: newTheme })
+  const updateTheme = () => {
+    // No-op: theme is always light
   }
 
   const resetSettings = () => {
-    setSettings(INIT_STATE)
+    // No-op: settings are always light
   }
 
   return (

@@ -1,18 +1,19 @@
 'use client'
-import { useState, useEffect } from 'react'
 import Hero from '@/assets/img/all-images/hero/hero-img1.png'
 import Sicon1 from '@/assets/img/icons/s-icon1.svg'
 import Sicon2 from '@/assets/img/icons/s-icon2.svg'
 import Sicon3 from '@/assets/img/icons/s-icon3.svg'
 import Sicon4 from '@/assets/img/icons/s-icon4.svg'
-import Sicon5 from '@/assets/img/icons/s-icon5.svg'
 import Aos from 'aos'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { currentYear } from '../helper/constants'
 import ContactModal from './ContactModal'
+import { useTranslation } from 'react-i18next'
 
 const SidebarPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     Aos.init({ duration: 1000, once: true })
@@ -34,37 +35,33 @@ const SidebarPage = () => {
       <div className="space18" />
       <h3>Filip Bonat</h3>
       <div className="space16" />
-      <p>
-        Hi, ich bin Filip Bonat, Versicherungsexperte mit über 4 Jahren Erfahrung
-        in der Entwicklung maßgeschneiderter Versicherungslösungen.
-      </p>
+      <p>{t('sidebar.description')}</p>
 
       <div className="space32" />
       <ul>
         <li>
-          <Link to="">
-            <img src={Sicon1} alt="" />
+          <Link to="tel:+436767857277">
+            <img src={Sicon1} alt="Telefon" />
           </Link>
         </li>
         <li>
-          <Link to="">
-            <img src={Sicon2} alt="" />
+          <Link to="https://wa.me/+436767857277">
+            <img src={Sicon2} alt="WhatsApp" />
           </Link>
         </li>
         <li>
-          <Link to="">
-            <img src={Sicon3} alt="" />
+          <Link to="mailto:info@filipbonat.com">
+            <img src={Sicon3} alt="Email" />
           </Link>
         </li>
         <li>
-          <Link to="">
-            <img src={Sicon4} alt="" />
-          </Link>
-        </li>
-        <li>
-          <Link to="" className="m-0">
-            <img src={Sicon5} alt="" />
-          </Link>
+          <a
+            href="https://www.google.com/maps/place/Lagergasse+4,+8700+Leitendorf/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Sicon4} alt="Maps" />
+          </a>
         </li>
       </ul>
 
@@ -74,14 +71,13 @@ const SidebarPage = () => {
           className="vl-btn1"
           onClick={() => setIsModalOpen(true)}
         >
-          Jetzt mit mir sprechen
+          {t('sidebar.cta')}
         </button>
       </div>
 
       <div className="space30" />
-      <p>© {currentYear} Filip Bonat. All Rights Reserved.</p>
+      <p>© {currentYear} Filip Bonat. {t('sidebar.rights')}</p>
 
-      {/* Aquí se monta tu modal */}
       <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   )

@@ -17,17 +17,15 @@ background: var(--ztc-bg-bg-1);
     width: 100%;
     z-index:9;
     padding: 16px 0;
-    transition: all .4s;
     .header-elements {
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
-        transition: all .4s;
         .site-logo{
             img {
-                width: 147px;
-                height: 40px;
+                width: 70px;
+                height: 70px;
                 object-fit: contain;
             }
         }
@@ -40,7 +38,7 @@ background: var(--ztc-bg-bg-1);
                 display: none;
             }
           }  
-          button {
+          button:not(.kreditrechner-btn) {
             border: none;
             outline: none;
             background: none;

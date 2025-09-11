@@ -2,6 +2,7 @@ $colors: (
     'text': (
         'text-1': #fff,
         'text-2': #061D1E,
+        'text-3': #000000,
         'btn-text1':#0E161F,
         'cnone-text':#fff,
     ),
@@ -13,6 +14,9 @@ $colors: (
         'bg2':rgba(255, 255, 255, 0.10),
         'sticky-bg':#061D1E,
         'bg3':#1F3434,
+        'card-bg': #ffffff,
+        'modal-bg': #ffffff,
+        'pure-white': #ffffff,
     ),
 
     'dark-bg': (
@@ -25,4 +29,3 @@ $colors: (
         'border-3': #fff,
     )
 );
-

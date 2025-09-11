@@ -10,8 +10,11 @@ import Aos from 'aos'
 import { useEffect } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import CountUp from 'react-countup'
+import { useTranslation } from 'react-i18next'
 
 const Skills = () => {
+  const { t } = useTranslation()
+
   useEffect(() => {
     Aos.init({
       duration: 1000,
@@ -21,25 +24,26 @@ const Skills = () => {
       Aos.refresh()
     }
   }, [])
+
   return (
     <>
       <div id="Kompetenzen">
         <div className="skill-section-area">
           <Container>
             <Row>
-              <Col gl={12}>
+              <Col lg={12}>
                 <div className="skill-header heading1">
                   <h5 data-aos="fade-left" data-aos-duration={800}>
                     <img src={Sublogo1} alt="" />
-                    Kompetenzen
+                    {t('skills.title')}
                   </h5>
                   <div className="space24" />
                   <h2 data-aos="fade-left" data-aos-duration={1000}>
-                    Die Basis für fundierte
+                    {t('skills.subtitle1')}
                   </h2>
                   <div className="space24" />
                   <h2 className="head" data-aos="fade-left" data-aos-duration={1100}>
-                    <span>Versicherungsberatung</span>
+                    <span>{t('skills.subtitle2')}</span>
                   </h2>
                 </div>
                 <div className="space80" />
@@ -47,84 +51,96 @@ const Skills = () => {
                   <Col lg={4} md={6} data-aos="zoom-out" data-aos-duration={900}>
                     <div className="skill-boxarea">
                       <div className="icons">
-                        <img src={Skill1} alt="Fachwissen" />
+                        <img src={Skill1} alt={t('skills.skill1.alt')} />
                       </div>
                       <div className="space24" />
                       <h3>
-                        <span className="counter"><CountUp duration={3} start={0} end={100} /></span>%
+                        <span className="counter">
+                          <CountUp duration={3} start={0} end={100} />
+                        </span>%
                       </h3>
                       <div className="space16" />
-                      <p>Fachwissen im Versicherungswesen</p>
+                      <p>{t('skills.skill1.text')}</p>
                     </div>
                   </Col>
 
                   <Col lg={4} md={6} data-aos="zoom-out" data-aos-duration={1000}>
                     <div className="skill-boxarea">
                       <div className="icons">
-                        <img src={Skill2} alt="Kundenorientierung" />
+                        <img src={Skill2} alt={t('skills.skill2.alt')} />
                       </div>
                       <div className="space24" />
                       <h3>
-                        <span className="counter"><CountUp duration={3} start={0} end={95} /></span>%
+                        <span className="counter">
+                          <CountUp duration={3} start={0} end={95} />
+                        </span>%
                       </h3>
                       <div className="space16" />
-                      <p>Kundenorientierte <br /> Beratung</p>
+                      <p>{t('skills.skill2.text')}</p>
                     </div>
                   </Col>
 
                   <Col lg={4} md={6} data-aos="zoom-out" data-aos-duration={1100}>
                     <div className="skill-boxarea">
                       <div className="icons">
-                        <img src={Skill3} alt="Risikobewertung" />
+                        <img src={Skill3} alt={t('skills.skill3.alt')} />
                       </div>
                       <div className="space24" />
                       <h3>
-                        <span className="counter"><CountUp duration={3} start={0} end={90} /></span>%
+                        <span className="counter">
+                          <CountUp duration={3} start={0} end={90} />
+                        </span>%
                       </h3>
                       <div className="space16" />
-                      <p>Risikobewertung & <br /> Analyse</p>
+                      <p>{t('skills.skill3.text')}</p>
                     </div>
                   </Col>
 
                   <Col lg={4} md={6} data-aos="zoom-out" data-aos-duration={1200}>
                     <div className="skill-boxarea">
                       <div className="icons">
-                        <img src={Skill4} alt="Vertragsmanagement" />
+                        <img src={Skill4} alt={t('skills.skill4.alt')} />
                       </div>
                       <div className="space24" />
                       <h3>
-                        <span className="counter"><CountUp duration={3} start={0} end={89} /></span>%
+                        <span className="counter">
+                          <CountUp duration={3} start={0} end={89} />
+                        </span>%
                       </h3>
                       <div className="space16" />
-                      <p>Vertragsmanagement & <br /> Betreuung</p>
+                      <p>{t('skills.skill4.text')}</p>
                     </div>
                   </Col>
 
                   <Col lg={4} md={6} data-aos="zoom-out" data-aos-duration={1000}>
                     <div className="skill-boxarea">
                       <div className="icons">
-                        <img src={Skill5} alt="Digitale Beratung" />
+                        <img src={Skill5} alt={t('skills.skill5.alt')} />
                       </div>
                       <div className="space24" />
                       <h3>
-                        <span className="counter"><CountUp duration={3} start={0} end={92} /></span>%
+                        <span className="counter">
+                          <CountUp duration={3} start={0} end={92} />
+                        </span>%
                       </h3>
                       <div className="space16" />
-                      <p>Digitale Beratung & <br /> Tools</p>
+                      <p>{t('skills.skill5.text')}</p>
                     </div>
                   </Col>
 
                   <Col lg={4} md={6} data-aos="zoom-out" data-aos-duration={1100}>
                     <div className="skill-boxarea">
                       <div className="icons">
-                        <img src={Skill6} alt="Regulatorisches Wissen" />
+                        <img src={Skill6} alt={t('skills.skill6.alt')} />
                       </div>
                       <div className="space24" />
                       <h3>
-                        <span className="counter"><CountUp duration={3} start={0} end={85} /></span>%
+                        <span className="counter">
+                          <CountUp duration={3} start={0} end={85} />
+                        </span>%
                       </h3>
                       <div className="space16" />
-                      <p>Regulatorisches <br /> Wissen</p>
+                      <p>{t('skills.skill6.text')}</p>
                     </div>
                   </Col>
                 </Row>

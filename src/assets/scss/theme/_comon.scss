@@ -41,7 +41,6 @@
             font-style: italic;
             font-weight: var(--ztc-weight-semibold);
             line-height: 80px;
-            text-decoration-line: underline;
             @media #{$md} {
                 font-size: var(--ztc-font-size-font-s60);
                 line-height: 60px;
@@ -84,7 +83,6 @@
             font-style: italic;
             font-weight: var(--ztc-weight-semibold);
             line-height: 80px;
-            text-decoration-line: underline;
             @media #{$md} {
                 font-size: var(--ztc-font-size-font-s60);
                 line-height: 60px;
@@ -112,7 +110,7 @@
         font-weight: var(--ztc-weight-medium);
         line-height: 26px;
         opacity: 80%; 
-        padding-left: 270px;
+
         @media #{$xs} {
             padding-left: 0;
         }       
@@ -150,18 +148,36 @@
     }
 }
 
+.lang-select {
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  background: var(--ztc-bg-btn-bg3);
+  color: var(--ztc-text-btn-text1);
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+
 // Small buttons for Main component
 .main-btn-area.small-buttons {
     display: flex;
-    gap: 10px;
+    gap: 10 px;
     
     .btn-sm {
         display: inline-block;
-        padding: 8px 16px;
-        font-size: 14px;
-        border-radius: 4px;
+        padding: 12px 20px;
+        font-size: 12px;
         text-decoration: none;
         transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         
         &.btn-privat {
             background-color: var(--ztc-bg-btn-bg1);
@@ -185,10 +201,6 @@
             }
         }
     }
-}
-/*============= COMMON CSS AREA ENDS===============*/
-
-.image-anime {
     position: relative;
     overflow: hidden;
   }

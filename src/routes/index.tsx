@@ -1,7 +1,9 @@
 import { lazy } from 'react'
 import { type RouteProps } from 'react-router-dom'
 
-const Demo1 = lazy(() => import('@/pages/HomePage/page'))
+const HomePage = lazy(() => import('@/pages/HomePage/page'))
+const PrivatPage = lazy(() => import('@/pages/PrivatPage/page'))
+const FirmaPage = lazy(() => import('@/pages/FirmaPage/page'))
 
 export type RoutesProps = {
   path: RouteProps['path']
@@ -14,7 +16,16 @@ export const routes: RoutesProps[] = [
   {
     path: '/',
     name: 'Index',
-    element: <Demo1 />,
+    element: <HomePage />,
   },
-
+  {
+    path: '/privat',
+    name: 'Privat',
+    element: <PrivatPage />,
+  },
+  {
+    path: '/firma',
+    name: 'Firma',
+    element: <FirmaPage />,
+  }
 ]

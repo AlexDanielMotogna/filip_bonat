@@ -10,7 +10,7 @@ import Skills from '../../components/Skills'
 import Testimonial from '../../components/Testimonials'
 import TopNav from '../../components/TopNav'
 
-const DemoPage = () => {
+const HomePage = () => {
   return (
     <>
       <div className="body1">
@@ -48,4 +48,4 @@ const DemoPage = () => {
   )
 }
 
-export default DemoPage
+export default HomePage

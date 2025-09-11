@@ -3,8 +3,11 @@ import Sublog1 from '@/assets/img/icons/sublogo1.svg'
 import Aos from 'aos'
 import { useEffect } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import { useTranslation } from 'react-i18next'
 
 const Service = () => {
+  const { t } = useTranslation()
+
   useEffect(() => {
     Aos.init({
       duration: 1000,
@@ -14,6 +17,7 @@ const Service = () => {
       Aos.refresh()
     }
   }, [])
+
   return (
     <>
       <div id="Leistungen">
@@ -24,47 +28,57 @@ const Service = () => {
                 <div className="service-header heading1">
                   <h5 data-aos="fade-left" data-aos-duration={800}>
                     <img src={Sublog1} alt="" />
-                    Leistungen
+                    {t("services.title")}
                   </h5>
                   <div className="space24" />
                   <h2 data-aos="fade-left" data-aos-duration={1000}>
-                    Versicherungslösungen
+                    {t("services.subtitle1")}
                   </h2>
                   <div className="space24" />
                   <h2 className="head" data-aos="fade-left" data-aos-duration={1100}>
-                    für jede <span>Lebenslage</span>
+                    {t("services.subtitle2")} <span>{t("services.subtitle2_span")}</span>
                   </h2>
                   <div className="space50" />
+
+                  {/* Box 1 */}
                   <div className="div" data-aos="fade-left" data-aos-duration={900}>
                     <div className="service-main-boxes">
-                      <h4>Beratung & Analyse</h4>
+                      <h4>{t("services.box1.title")}</h4>
                       <div className="space24" />
-                      <p>Wir analysieren Ihre individuelle Situation und finden die optimale Versicherung.</p>
+                      <p>{t("services.box1.text")}</p>
                     </div>
                   </div>
+
                   <div className="space30" />
+
+                  {/* Box 2 */}
                   <div className="div" data-aos="fade-left" data-aos-duration={1000}>
                     <div className="service-main-boxes">
-                      <h4>Private Versicherungen</h4>
+                      <h4>{t("services.box2.title")}</h4>
                       <div className="space24" />
-                      <p>Lebens-, Unfall-, Hausrat-, Haftpflicht- und Krankenversicherung.</p>
+                      <p>{t("services.box2.text")}</p>
                     </div>
                   </div>
+
                   <div className="space30" />
+
+                  {/* Box 3 */}
                   <div className="div" data-aos="fade-left" data-aos-duration={1100}>
                     <div className="service-main-boxes">
-                      <h4>Gewerbliche Versicherungen</h4>
+                      <h4>{t("services.box3.title")}</h4>
                       <div className="space24" />
-                      <p>Schutz für Unternehmen, Mitarbeiter, Fuhrpark und Betriebshaftpflicht.
-                      </p>
+                      <p>{t("services.box3.text")}</p>
                     </div>
                   </div>
+
                   <div className="space30" />
+
+                  {/* Box 4 */}
                   <div className="div" data-aos="fade-left" data-aos-duration={1200}>
                     <div className="service-main-boxes">
-                      <h4>Digitale Vertragsverwaltung</h4>
+                      <h4>{t("services.box4.title")}</h4>
                       <div className="space24" />
-                      <p>Alle Policen übersichtlich, digital & jederzeit zugänglich.</p>
+                      <p>{t("services.box4.text")}</p>
                     </div>
                   </div>
                 </div>
