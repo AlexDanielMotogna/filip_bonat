@@ -59,7 +59,7 @@ const KreditrechnerModal: React.FC<KreditrechnerModalProps> = ({ isOpen, onClose
                 <Form.Control
                   id="kreditbetrag"
                   type="text"
-                  value={kreditbetrag === 0 ? "" : kreditbetrag.toLocaleString("de-DE")}
+                  value={kreditbetrag === null ? "" : kreditbetrag.toLocaleString("de-DE")}
                   onChange={(e) => {
                     const parsed = parseATNumber(e.target.value);
                     if (!isNaN(parsed)) setKreditbetrag(parsed);

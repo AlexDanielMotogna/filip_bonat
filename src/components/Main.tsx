@@ -41,9 +41,9 @@ const Main = () => {
         <div className="space32" />
 
         {/* Subheadline corta */}
-        <p className="subheadline" data-aos="fade-left" data-aos-duration={1100}>
+        <h3 className="subheadline" data-aos="fade-left" data-aos-duration={1100}>
           {t("Sind Sie Privat oder Firmenkunde?")}
-        </p>
+        </h3>
 
         {/* Botones */}
         <div

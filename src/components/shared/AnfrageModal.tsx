@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import axios from 'axios'
 
 interface AnfrageModalProps {
   unterlagen: string[]
@@ -14,8 +15,10 @@ const AnfrageModal: React.FC<AnfrageModalProps> = ({ unterlagen, onClose }) => {
     email: '',
     phone: '',
     message: '',
-    uploadedDocs: {} as Record<string, File | null>
+    uploadedDocs: {} as Record<string, { file: File; base64: string } | null>
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -24,20 +27,82 @@ const AnfrageModal: React.FC<AnfrageModalProps> = ({ unterlagen, onClose }) => {
     })
   }
 
-  const handleFileUpload = (unterlage: string, file: File | null) => {
-    setFormData((prev) => ({
-      ...prev,
-      uploadedDocs: {
-        ...prev.uploadedDocs,
-        [unterlage]: file
+  const handleFileUpload = async (unterlage: string, file: File | null) => {
+    if (file) {
+      try {
+        const base64 = await fileToBase64(file)
+        setFormData((prev) => ({
+          ...prev,
+          uploadedDocs: {
+            ...prev.uploadedDocs,
+            [unterlage]: { file, base64 }
+          }
+        }))
+      } catch (error) {
+        console.error('Error converting file to base64:', error)
       }
-    }))
+    } else {
+      setFormData((prev) => {
+        const { [unterlage]: _, ...remainingDocs } = prev.uploadedDocs
+        return {
+          ...prev,
+          uploadedDocs: remainingDocs
+        }
+      })
+    }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Convert file to base64
+  const fileToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader()
+      reader.readAsDataURL(file)
+      reader.onload = () => resolve(reader.result as string)
+      reader.onerror = (error) => reject(error)
+    })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    onClose()
+    setIsSubmitting(true)
+    setSubmitError(null)
+
+    try {
+      // Prepare submission data
+      const submissionData = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        unterlagen: Object.keys(formData.uploadedDocs).join(', '), // List of uploaded document names
+        uploadedFiles: Object.entries(formData.uploadedDocs).map(([name, doc]) => ({
+          name,
+          base64: doc?.base64 || ''
+        }))
+      }
+
+      // Submit the form via API
+      const response = await axios.post('/api/anfrage', submissionData)
+
+      // Reset form and close modal on success
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        uploadedDocs: {}
+      })
+      onClose()
+    } catch (error) {
+      // Handle submission error
+      const errorMessage = axios.isAxiosError(error)
+        ? error.response?.data?.error || 'An unexpected error occurred'
+        : 'An unexpected error occurred'
+
+      setSubmitError(errorMessage)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -53,6 +118,13 @@ const AnfrageModal: React.FC<AnfrageModalProps> = ({ unterlagen, onClose }) => {
         </div>
 
         <form onSubmit={handleSubmit} className="modal-body">
+          {/* Error Message */}
+          {submitError && (
+            <div className="error-message">
+              {submitError}
+            </div>
+          )}
+
           {/* Personal Info */}
           <div className="form-section">
             <h3>{t('anfrage.personalInfo')}</h3>
@@ -123,17 +195,13 @@ const AnfrageModal: React.FC<AnfrageModalProps> = ({ unterlagen, onClose }) => {
 
                       {/* Nombre del archivo si existe */}
                       <span className="file-name">
-                        {fileUploaded ? fileUploaded.name : t('Keine Datei')}
+                        {fileUploaded ? fileUploaded.file.name : t('Keine Datei')}
                       </span>
                     </div>
                   </div>
                 )
               })}
             </div>
-
-
-
-
           </div>
 
           {/* Message */}
@@ -153,10 +221,19 @@ const AnfrageModal: React.FC<AnfrageModalProps> = ({ unterlagen, onClose }) => {
 
           {/* Actions */}
           <div className="form-actions">
-            <button type="submit" className="btn-primary">
-              {t('form.submit')}
+            <button
+              type="submit"
+              className="btn-primary"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? t('form.submitting') : t('form.submit')}
             </button>
-            <button type="button" onClick={onClose} className="btn-secondary">
+            <button
+              type="button"
+              onClick={onClose}
+              className="btn-secondary"
+              disabled={isSubmitting}
+            >
               {t('form.cancel')}
             </button>
           </div>
