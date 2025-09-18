@@ -9,7 +9,7 @@ const firmaCategories = [
   {
     id: 'betrieblich',
     title: 'Betriebliche Absicherung',
-    icon: '🏢',
+    icon: '',
     description: 'Schutz für Ihr Unternehmen',
     subcategories: [
       {
@@ -49,7 +49,7 @@ const firmaCategories = [
   {
     id: 'mitarbeiter',
     title: 'Mitarbeitervorsorge',
-    icon: '👥',
+    icon: '',
     description: 'Benefits für Ihre Angestellten',
     subcategories: [
       {
@@ -89,7 +89,7 @@ const firmaCategories = [
   {
     id: 'transport',
     title: 'Transport & Logistik',
-    icon: '🚚',
+    icon: '',
     description: 'Absicherung für Waren und Fahrzeuge',
     subcategories: [
       {
@@ -129,7 +129,7 @@ const firmaCategories = [
   {
     id: 'cyber',
     title: 'Cyber & IT',
-    icon: '💻',
+    icon: '',
     description: 'Digitale Risiken absichern',
     subcategories: [
       {
@@ -165,6 +165,62 @@ const firmaCategories = [
         ]
       }
     ]
+  },
+  {
+    id: 'immobilien',
+    title: 'Immobilien',
+    icon: '',
+    description: 'Gewerbeimmobilien für Unternehmen',
+    subcategories: [
+      {
+        id: 'kaufen',
+        name: 'Kaufen',
+        tabs: [
+          {
+            id: 'standard',
+            name: 'Gewerbeimmobilie kaufen',
+            unterlagen: [
+              'Handelsregisterauszug',
+              'Gewerbeanmeldung',
+              'Jahresabschluss (letzte 3 Jahre)',
+              'BWA (letzte 12 Monate)',
+              'Eigenkapitalnachweis',
+              'Finanzierungsbestätigung',
+              'Grundbuchauszug (falls vorhanden)',
+              'Exposé der gewünschten Immobilie',
+              'Nutzungskonzept',
+              'Gesellschaftervertrag',
+              'Steuerliche Unbedenklichkeitsbescheinigung'
+            ]
+          }
+        ]
+      },
+      {
+        id: 'verkaufen',
+        name: 'Verkaufen',
+        tabs: [
+          {
+            id: 'standard',
+            name: 'Gewerbeimmobilie verkaufen',
+            unterlagen: [
+              'Handelsregisterauszug',
+              'Grundbuchauszug',
+              'Energieausweis',
+              'Grundriss und Lagepläne',
+              'Baubeschreibung',
+              'Flächenberechnung',
+              'Teilungserklärung (falls vorhanden)',
+              'Nebenkostenabrechnungen (letzte 3 Jahre)',
+              'Mietverträge (bei vermieteten Objekten)',
+              'Instandhaltungsnachweis',
+              'Brandschutznachweis',
+              'Umweltgutachten (falls erforderlich)',
+              'Verkehrswertgutachten'
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
 
@@ -173,6 +229,9 @@ const FirmaPage: React.FC = () => {
   const [setSelectedSubcategory] = useState<any>(null)
   const [showAnfrageModal, setShowAnfrageModal] = useState(false)
   const [selectedUnterlagen, setSelectedUnterlagen] = useState<string[]>([])
+  const [selectedCategoryTitle, setSelectedCategoryTitle] = useState<string>('')
+  const [selectedSubcategoryName, setSelectedSubcategoryName] = useState<string>('')
+
 
   const handleCategoryClick = (category: any) => {
     setSelectedCategory(category)
@@ -182,8 +241,10 @@ const FirmaPage: React.FC = () => {
     setSelectedSubcategory(subcategory)
   }
 
-  const handleAnfrageClick = (unterlagen: string[]) => {
+  const handleAnfrageClick = (unterlagen: string[], categoryTitle: string, subcategoryName: string) => {
     setSelectedUnterlagen(unterlagen)
+    setSelectedCategoryTitle(categoryTitle)
+    setSelectedSubcategoryName(subcategoryName)
     setShowAnfrageModal(true)
   }
 
@@ -226,25 +287,46 @@ const FirmaPage: React.FC = () => {
               </div>
               <div className="features-grid">
                 <div className="feature-item">
-                  <div className="feature-icon">⚡</div>
+                  <div className="feature-">⚡</div>
                   <h4>Schnelle Bearbeitung</h4>
                   <p>Ihre Anfragen werden binnen 24h bearbeitet</p>
                 </div>
                 <div className="feature-item">
-                  <div className="feature-icon">🎯</div>
+                  <div className="feature-icon"></div>
                   <h4>Maßgeschneidert</h4>
                   <p>Individuelle Lösungen für Ihr Unternehmen</p>
                 </div>
                 <div className="feature-item">
-                  <div className="feature-icon">🤝</div>
+                  <div className="feature-icon"></div>
                   <h4>Persönlicher Service</h4>
                   <p>Direkter Kontakt zu Ihrem Berater</p>
                 </div>
                 <div className="feature-item">
-                  <div className="feature-icon">📊</div>
+                  <div className="feature-icon"></div>
                   <h4>Transparente Kosten</h4>
                   <p>Keine versteckten Gebühren</p>
                 </div>
+              </div>
+            </div>
+
+            {/* House Listings Section */}
+            <div className="house-listings-section">
+              <div className="page-header">
+                <h2>Immobilien zum Kauf</h2>
+                <p>Entdecken Sie verfügbare Gewerbeimmobilien</p>
+              </div>
+              <div className="house-listings-link">
+                <a
+                  href="https://www.willhaben.at/iad/immobilien/gewerbe-industrie"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="house-link-btn"
+                >
+                  🏢 Gewerbeimmobilien auf Willhaben ansehen
+                </a>
+                <p className="link-description">
+                  Klicken Sie hier, um aktuelle Gewerbeimmobilien zu durchsuchen
+                </p>
               </div>
             </div>
 
@@ -269,6 +351,8 @@ const FirmaPage: React.FC = () => {
           {showAnfrageModal && (
             <AnfrageModal
               unterlagen={selectedUnterlagen}
+              category={selectedCategoryTitle}
+              subcategory={selectedSubcategoryName}
               onClose={() => setShowAnfrageModal(false)}
             />
           )}

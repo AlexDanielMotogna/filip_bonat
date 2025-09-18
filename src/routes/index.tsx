@@ -4,6 +4,7 @@ import { type RouteProps } from 'react-router-dom'
 const HomePage = lazy(() => import('@/pages/HomePage/page'))
 const PrivatPage = lazy(() => import('@/pages/PrivatPage/page'))
 const FirmaPage = lazy(() => import('@/pages/FirmaPage/page'))
+const DatenschutzPage = lazy(() => import('@/pages/DatenschutzPage/page'))
 
 export type RoutesProps = {
   path: RouteProps['path']
@@ -27,5 +28,10 @@ export const routes: RoutesProps[] = [
     path: '/firma',
     name: 'Firma',
     element: <FirmaPage />,
+  },
+  {
+    path: '/datenschutz',
+    name: 'Datenschutz',
+    element: <DatenschutzPage />,
   }
 ]

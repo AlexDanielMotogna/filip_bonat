@@ -15,12 +15,12 @@ const HomePage = () => {
     <>
       <div className="body1">
         <TopNav />
+        <IconVertical />
         <div className="main-hero-area parallaxie">
           <Container>
             <Row>
               <Col lg={4}>
                 <div className="personal-contact-box" data-aos="fade-right" data-aos-duration={1000}>
-                  <IconVertical />
                   <SidebarPage />
                 </div>
               </Col>
@@ -28,8 +28,9 @@ const HomePage = () => {
                 <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" className="scrollspy-example" tabIndex={0}>
                   <Main />
                   <div className="space50" />
-                  <About />
                   <Service />
+                  <div className="space50" />
+                  <About />
                   <div className="space50" />
                   <Skills />
                   <div className="space30" />

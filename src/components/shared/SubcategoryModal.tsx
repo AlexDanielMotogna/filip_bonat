@@ -17,7 +17,7 @@ interface SubcategoryModalProps {
   }
   onClose: () => void
   onSubcategorySelect: (subcategory: any) => void
-  onAnfrageClick: (unterlagen: string[]) => void
+  onAnfrageClick: (unterlagen: string[], categoryTitle: string, subcategoryName: string) => void
 }
 
 const SubcategoryModal: React.FC<SubcategoryModalProps> = ({
@@ -36,13 +36,16 @@ const SubcategoryModal: React.FC<SubcategoryModalProps> = ({
   }
 
   return (
-    <div className="category-modal">
-      <div className="modal-content">
+    <div className="contact-modal-overlay">
+      <div className="contact-modal subcategory-modal-content">
         <div className="modal-header">
-          <h2>
-            <span className="business-icon">{category.title.includes('Firma')}</span>
-            {category.title} {t("Optionen")}
-          </h2>
+          <div className="header-content">
+            <h2>
+              <span className="business-icon">{category.title.includes('Firma')}</span>
+              {category.title} {t("Optionen")}
+            </h2>
+            <p>Wählen Sie Ihre gewünschte Option und starten Sie Ihre Anfrage</p>
+          </div>
           <button onClick={onClose} className="close-btn">
             ✕
           </button>
@@ -86,7 +89,7 @@ const SubcategoryModal: React.FC<SubcategoryModalProps> = ({
           </div>
 
           <button
-            onClick={() => onAnfrageClick(activeTab.unterlagen)}
+            onClick={() => onAnfrageClick(activeTab.unterlagen, category.title, selectedSubcategory.name)}
             className="action-btn"
           >
             <span>{t("Anfrage starten")}</span>

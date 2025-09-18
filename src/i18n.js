@@ -2,6 +2,7 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
+
 const resources = {
 de: {
     translation: {
@@ -83,19 +84,24 @@ de: {
         title: "Anfrage stellen",
         subtitle: "Wir melden uns innerhalb von 24 Stunden bei Ihnen",
         personalInfo: "Persönliche Informationen",
-        documents: "Verfügbare Unterlagen",
-        documentsHint: "Bitte markieren oder hochladen Sie die Unterlagen"
+        documents: "Verfügbare Unterlagen (optional)",
+        documentsHint: "Hochladen Sie die Unterlagen"
       },
-
-      form: {
-        name: "Name",
-        email: "E-Mail",
-        phone: "Telefon",
-        message: "Nachricht (optional)",
-        messagePlaceholder: "Teilen Sie uns weitere Details mit...",
-        submit: "Anfrage senden",
-        cancel: "Abbrechen"
-      },
+form: {
+  name: "Name",
+  email: "E-Mail",
+  phone: "Telefon",
+  message: "Nachricht (optional)",
+  messagePlaceholder: "Teilen Sie uns weitere Details mit...",
+  submit: "Anfrage senden",
+  cancel: "Abbrechen",
+  acceptDatenschutz: "Ich akzeptiere die",
+  successTitle: "Erfolg!",
+  successMessage: "Ihre Anfrage wurde erfolgreich gesendet.",
+  submitting: "Wird gesendet...",
+  datenschutzRequired: "Bitte akzeptieren Sie die Datenschutzerklärung",
+  "Ich akzeptiere die {link}": "Ich akzeptiere die {link}",
+},
 
       services: {
         title: "Leistungen",
@@ -118,7 +124,8 @@ de: {
           title: "Digitale Vertragsverwaltung",
           text: "Alle Policen übersichtlich, digital & jederzeit zugänglich."
         }
-      }
+      }, 
+      
     }
   },
   en: {
