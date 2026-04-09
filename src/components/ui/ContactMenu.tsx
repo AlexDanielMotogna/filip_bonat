@@ -97,7 +97,7 @@ export default function ContactMenu({
       {open && (
         <div
           role="menu"
-          className={`absolute top-full mt-3 w-72 rounded-2xl border border-border bg-bg p-2 shadow-2xl shadow-text/10 z-50 ${
+          className={`absolute top-full mt-3 w-[min(18rem,calc(100vw-2rem))] rounded-2xl border border-border bg-bg p-2 shadow-2xl shadow-text/10 z-50 ${
             align === 'right' ? 'right-0' : 'left-0'
           }`}
         >

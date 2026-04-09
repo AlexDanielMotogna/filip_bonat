@@ -49,7 +49,7 @@ function SliderField({
 
   return (
     <div>
-      <div className="flex items-baseline justify-between mb-3">
+      <div className="flex flex-col gap-1 mb-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
         <label
           htmlFor={`slider-${fieldKey}`}
           className="text-sm font-medium text-text"
@@ -69,7 +69,7 @@ function SliderField({
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
       />
-      <div className="mt-2 flex justify-between text-[11px] uppercase tracking-wider text-text-faint tabular-nums">
+      <div className="mt-2 flex justify-between text-[10px] sm:text-[11px] uppercase tracking-wider text-text-faint tabular-nums">
         <span>{min}</span>
         <span>{max}</span>
       </div>
@@ -106,12 +106,12 @@ export default function Tools() {
       <div className="grid lg:grid-cols-5 gap-6">
         {/* Calculator card */}
         <Reveal className="lg:col-span-3">
-          <div className="rounded-3xl border border-border bg-surface p-8 md:p-10 h-full">
+          <div className="rounded-2xl sm:rounded-3xl border border-border bg-surface p-6 sm:p-8 md:p-10 h-full">
             <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-text-faint">
               {tools.calculator.title}
             </h3>
 
-            <div className="mt-8 space-y-8">
+            <div className="mt-6 sm:mt-8 space-y-7 sm:space-y-8">
               <SliderField
                 fieldKey="amount"
                 value={amount}
@@ -132,35 +132,35 @@ export default function Tools() {
               />
             </div>
 
-            <div className="mt-10 pt-8 border-t border-border">
+            <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-border">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-faint">
                 Monatliche Rate
               </p>
-              <p className="mt-3 font-display text-5xl md:text-6xl font-semibold text-text tabular-nums">
+              <p className="mt-3 font-display text-4xl sm:text-5xl md:text-6xl font-semibold text-text tabular-nums">
                 {eur0.format(monthly)}
               </p>
 
-              <div className="mt-8 grid grid-cols-2 gap-6">
+              <div className="mt-6 sm:mt-8 grid grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-text-faint">
+                  <p className="text-[10px] sm:text-xs uppercase tracking-wider text-text-faint">
                     Gesamtkosten
                   </p>
-                  <p className="mt-2 text-xl font-semibold text-text tabular-nums">
+                  <p className="mt-2 text-base sm:text-xl font-semibold text-text tabular-nums">
                     {eur0.format(total)}
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-text-faint">
+                  <p className="text-[10px] sm:text-xs uppercase tracking-wider text-text-faint">
                     Zinsen gesamt
                   </p>
-                  <p className="mt-2 text-xl font-semibold text-text tabular-nums">
+                  <p className="mt-2 text-base sm:text-xl font-semibold text-text tabular-nums">
                     {eur0.format(interest)}
                   </p>
                 </div>
               </div>
             </div>
 
-            <p className="mt-8 text-xs text-text-faint leading-relaxed">
+            <p className="mt-6 sm:mt-8 text-xs text-text-faint leading-relaxed">
               Bei {num0.format(years * 12)} Monatsraten. {tools.calculator.disclaimer}
             </p>
           </div>
@@ -172,7 +172,7 @@ export default function Tools() {
             href={tools.realEstate.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative block h-full min-h-[480px] overflow-hidden rounded-3xl"
+            className="group relative block h-full min-h-[420px] sm:min-h-[480px] overflow-hidden rounded-2xl sm:rounded-3xl"
           >
             {/* Background image */}
             <img
@@ -190,25 +190,25 @@ export default function Tools() {
             />
 
             {/* Content */}
-            <div className="relative flex h-full flex-col p-8 md:p-10">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+            <div className="relative flex h-full flex-col p-6 sm:p-8 md:p-10">
+              <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-accent">
                 {tools.realEstate.eyebrow}
               </p>
 
               <div className="mt-auto">
-                <h3 className="font-display text-3xl md:text-4xl font-semibold text-bg">
+                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-bg">
                   {tools.realEstate.title}
                 </h3>
 
-                <p className="mt-4 text-bg/80 leading-relaxed">
+                <p className="mt-3 sm:mt-4 text-sm sm:text-base text-bg/80 leading-relaxed">
                   {tools.realEstate.desc}
                 </p>
 
-                <div className="mt-8 flex items-center justify-between gap-4">
-                  <span className="text-sm font-medium text-bg break-all">
+                <div className="mt-6 sm:mt-8 flex items-center justify-between gap-4">
+                  <span className="text-xs sm:text-sm font-medium text-bg break-all">
                     {tools.realEstate.cta}
                   </span>
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-accent text-accent-ink group-hover:scale-110 transition-transform">
+                  <span className="grid h-11 w-11 sm:h-12 sm:w-12 shrink-0 place-items-center rounded-full bg-accent text-accent-ink group-hover:scale-110 transition-transform">
                     <FaArrowUpRightFromSquare className="h-4 w-4" />
                   </span>
                 </div>

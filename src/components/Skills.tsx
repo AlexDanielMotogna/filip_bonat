@@ -32,15 +32,17 @@ function SkillBar({
   }, [inView, value, motionValue])
 
   return (
-    <div ref={ref} className="border-t border-border first:border-t-0 py-6 md:py-7">
-      <div className="flex items-baseline justify-between gap-6">
-        <h3 className="text-base md:text-lg font-medium text-text">{label}</h3>
-        <p className="font-display text-2xl md:text-3xl font-semibold text-text tabular-nums">
+    <div ref={ref} className="border-t border-border first:border-t-0 py-5 sm:py-6 md:py-7">
+      <div className="flex items-baseline justify-between gap-4 sm:gap-6">
+        <h3 className="flex-1 min-w-0 text-sm sm:text-base md:text-lg font-medium text-text">
+          {label}
+        </h3>
+        <p className="font-display text-xl sm:text-2xl md:text-3xl font-semibold text-text tabular-nums shrink-0">
           {reduced ? value : <motion.span>{display}</motion.span>}
           <span className="text-text-muted">%</span>
         </p>
       </div>
-      <div className="mt-4 h-[3px] w-full bg-border-strong overflow-hidden rounded-full">
+      <div className="mt-3 sm:mt-4 h-[3px] w-full bg-border-strong overflow-hidden rounded-full">
         <motion.div
           className="h-full bg-accent origin-left"
           initial={{ scaleX: 0 }}

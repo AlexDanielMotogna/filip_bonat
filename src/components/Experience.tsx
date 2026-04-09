@@ -11,7 +11,7 @@ export default function Experience() {
       title={experience.title}
       titleAccent={experience.titleAccent}
     >
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+      <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-20">
         {/* Berufserfahrung */}
         <div>
           <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-text-faint mb-8">
@@ -28,7 +28,7 @@ export default function Experience() {
                   <p className="text-xs uppercase tracking-wider text-text-muted">
                     {item.period}
                   </p>
-                  <h4 className="mt-2 text-2xl font-semibold text-text">
+                  <h4 className="mt-2 text-xl sm:text-2xl font-semibold text-text">
                     {item.role}
                   </h4>
                   <p className="mt-1 text-sm text-text-muted">{item.org}</p>
@@ -62,7 +62,7 @@ export default function Experience() {
                   <p className="text-xs uppercase tracking-wider text-text-muted">
                     {item.period}
                   </p>
-                  <h4 className="mt-2 text-2xl font-semibold text-text">
+                  <h4 className="mt-2 text-xl sm:text-2xl font-semibold text-text">
                     {item.role}
                   </h4>
                   <p className="mt-1 text-sm text-text-muted">{item.org}</p>

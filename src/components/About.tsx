@@ -12,23 +12,23 @@ export default function About() {
       titleAccent={about.titleAccent}
     >
       <Reveal>
-        <p className="max-w-3xl text-lg md:text-xl text-text-muted leading-relaxed">
+        <p className="max-w-3xl text-base sm:text-lg md:text-xl text-text-muted leading-relaxed">
           {about.intro}
         </p>
       </Reveal>
 
-      <ul className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+      <ul className="mt-12 sm:mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
         {about.values.map((v, i) => (
           <Reveal as="li" key={v.title} delay={i * 0.05}>
-            <div className="h-full bg-bg p-6 md:p-8 hover:bg-surface transition-colors">
+            <div className="h-full bg-bg p-5 sm:p-6 md:p-8 hover:bg-surface transition-colors">
               <div
                 aria-hidden
-                className="mb-6 font-display text-sm font-semibold text-text-faint tabular-nums"
+                className="mb-5 sm:mb-6 font-display text-sm font-semibold text-text-faint tabular-nums"
               >
                 {String(i + 1).padStart(2, '0')}
               </div>
-              <h4 className="text-lg font-semibold text-text">{v.title}</h4>
-              <p className="mt-3 text-sm text-text-muted leading-relaxed">
+              <h4 className="text-base sm:text-lg font-semibold text-text">{v.title}</h4>
+              <p className="mt-2 sm:mt-3 text-sm text-text-muted leading-relaxed">
                 {v.desc}
               </p>
             </div>

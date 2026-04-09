@@ -23,20 +23,23 @@ export default function Nav() {
   }, [open])
 
   return (
+    <>
     <header
-      className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
-        scrolled
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        open
+          ? 'bg-bg border-b border-border'
+          : scrolled
           ? 'bg-bg/85 backdrop-blur-md border-b border-border'
           : 'bg-bg/60 backdrop-blur-md border-b border-transparent'
       }`}
     >
-      <div className="container-page flex h-20 items-center justify-between gap-6">
+      <div className="container-page flex h-16 sm:h-20 items-center justify-between gap-3 sm:gap-6">
         <a
           href="#startseite"
-          className="flex items-center gap-3 group shrink-0"
+          className="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0"
         >
-          <img src="/fav-logo1.png" alt="" className="h-8 w-8 brightness-0" />
-          <span className="font-display font-semibold tracking-tight text-text">
+          <img src="/fav-logo1.png" alt="" className="h-7 w-7 sm:h-8 sm:w-8 brightness-0 shrink-0" />
+          <span className="font-display font-semibold tracking-tight text-text truncate">
             {profile.name}
           </span>
         </a>
@@ -56,7 +59,7 @@ export default function Nav() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <a
             href="#kreditrechner"
             className="hidden md:inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm font-medium text-text hover:border-text transition-colors"
@@ -66,6 +69,14 @@ export default function Nav() {
           <div className="hidden md:block">
             <ContactMenu variant="primary" size="md" />
           </div>
+          {/* Mobile-only quick call button */}
+          <a
+            href={profile.phoneHref}
+            aria-label="Anrufen"
+            className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-full bg-accent text-accent-ink hover:bg-accent-hover transition-colors"
+          >
+            <FaPhone className="h-3.5 w-3.5" />
+          </a>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -78,22 +89,26 @@ export default function Nav() {
         </div>
       </div>
 
-      {/* Mobile drawer */}
+      </header>
+
+      {/* Mobile drawer — must be OUTSIDE the header because the header has
+          backdrop-filter, which makes it the containing block for any fixed
+          descendants (so a fixed drawer inside would be clipped to the header). */}
       <div
-        className={`lg:hidden fixed inset-x-0 top-20 bottom-0 bg-bg border-t border-border overflow-y-auto transition-opacity duration-300 ${
+        className={`lg:hidden fixed inset-x-0 top-16 sm:top-20 bottom-0 z-40 bg-bg border-t border-border overflow-y-auto transition-opacity duration-300 ${
           open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
         <nav
           aria-label="Mobile Navigation"
-          className="container-page py-12 flex flex-col gap-6"
+          className="container-page py-10 sm:py-12 flex flex-col gap-5 sm:gap-6"
         >
           {nav.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
               onClick={() => setOpen(false)}
-              className="text-3xl font-display font-semibold text-text hover:text-accent transition-colors"
+              className="text-2xl sm:text-3xl font-display font-semibold text-text hover:text-accent transition-colors"
             >
               {item.label}
             </a>
@@ -157,6 +172,6 @@ export default function Nav() {
           </div>
         </nav>
       </div>
-    </header>
+    </>
   )
 }

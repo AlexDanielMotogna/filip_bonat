@@ -54,22 +54,22 @@ export default function Contact() {
         </p>
       </Reveal>
 
-      <div className="grid lg:grid-cols-5 gap-px bg-border rounded-3xl overflow-hidden border border-border">
+      <div className="grid lg:grid-cols-5 gap-px bg-border rounded-2xl sm:rounded-3xl overflow-hidden border border-border">
         {/* Channels */}
-        <div className="lg:col-span-2 bg-bg p-8 md:p-10">
-          <ul className="space-y-2">
+        <div className="lg:col-span-2 bg-bg p-6 sm:p-8 md:p-10">
+          <ul className="space-y-1 sm:space-y-2">
             {channels.map((c) => {
               const Icon = c.icon
               const inner = (
-                <div className="flex items-start gap-5 rounded-2xl p-3 -m-3 group">
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-surface text-text group-hover:bg-accent group-hover:text-accent-ink transition-colors">
-                    <Icon className="h-5 w-5" />
+                <div className="flex items-start gap-4 sm:gap-5 rounded-2xl p-3 -m-3 group">
+                  <span className="grid h-11 w-11 sm:h-12 sm:w-12 shrink-0 place-items-center rounded-full bg-surface text-text group-hover:bg-accent group-hover:text-accent-ink transition-colors">
+                    <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                   </span>
                   <div className="min-w-0">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-faint">
+                    <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-text-faint">
                       {c.label}
                     </p>
-                    <p className="mt-1 text-base text-text break-all">
+                    <p className="mt-1 text-sm sm:text-base text-text break-all">
                       {c.value}
                     </p>
                   </div>
@@ -97,7 +97,7 @@ export default function Contact() {
         </div>
 
         {/* Map */}
-        <div className="lg:col-span-3 bg-surface min-h-[400px] lg:min-h-0">
+        <div className="lg:col-span-3 bg-surface min-h-[320px] sm:min-h-[400px] lg:min-h-0">
           <iframe
             title={`Standort ${profile.location}`}
             src={contact.mapEmbed}

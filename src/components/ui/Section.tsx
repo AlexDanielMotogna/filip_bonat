@@ -25,13 +25,13 @@ export default function Section({
     <section
       id={id}
       aria-labelledby={`${id}-heading`}
-      className={`scroll-mt-24 py-24 md:py-32 ${bgClass} ${className}`}
+      className={`scroll-mt-24 py-16 sm:py-20 md:py-28 lg:py-32 ${bgClass} ${className}`}
     >
       <div className="container-page">
         {(eyebrow || title) && (
-          <header className="mb-14 md:mb-20 max-w-3xl">
+          <header className="mb-10 sm:mb-14 md:mb-20 max-w-3xl">
             {eyebrow && (
-              <p className="mb-6 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-text-muted">
+              <p className="mb-5 inline-flex items-center gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-text-muted">
                 <span aria-hidden className="h-px w-8 bg-accent" />
                 {eyebrow}
               </p>
@@ -39,7 +39,7 @@ export default function Section({
             {title && (
               <h2
                 id={`${id}-heading`}
-                className="text-4xl md:text-5xl font-semibold text-text"
+                className="text-3xl sm:text-4xl md:text-5xl font-semibold text-text"
               >
                 {title}
                 {titleAccent && (
